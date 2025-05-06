@@ -1,0 +1,139 @@
+import type { Config } from "tailwindcss"
+import animate from "tailwindcss-animate"
+const config = {
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        "pixel-brown": {
+          DEFAULT: "#8B5E34",
+          light: "#A67C52",
+          dark: "#6D4824",
+        },
+        "pixel-tan": {
+          DEFAULT: "#D2B48C",
+          light: "#E6D2B3",
+          dark: "#BF9E6B",
+        },
+        "pixel-orange": {
+          DEFAULT: "#FF7F50",
+          light: "#FFA07A",
+          dark: "#E35D31",
+        },
+        "pixel-yellow": {
+          DEFAULT: "#FFD700",
+          light: "#FFEB57",
+          dark: "#D4AF37",
+        },
+        "pixel-green": {
+          DEFAULT: "#4CAF50",
+          light: "#7BC67E",
+          dark: "#3E8E41",
+        },
+        "pixel-blue": {
+          DEFAULT: "#4169E1",
+          light: "#738BE7",
+          dark: "#2A4CBD",
+        },
+        "pixel-purple": {
+          DEFAULT: "#9370DB",
+          light: "#B39DDB",
+          dark: "#7D57C2",
+        },
+        "pixel-pink": {
+          DEFAULT: "#FF69B4",
+          light: "#FF9CC9",
+          dark: "#D84A9E",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "pixel-float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "pixel-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(90deg)" },
+          "50%": { transform: "rotate(180deg)" },
+          "75%": { transform: "rotate(270deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "pixel-float": "pixel-float 2s ease-in-out infinite",
+        "pixel-spin": "pixel-spin 8s steps(4) infinite",
+      },
+      fontFamily: {
+        pixel: ["var(--font-vt323)"],
+        "pixel-accent": ["var(--font-press-start)"],
+        outfit: ["var(--font-outfit)"],
+      },
+    },
+  },
+  plugins: [animate],
+} satisfies Config
+
+export default config
